@@ -3,7 +3,7 @@
   import UsMapSvg from './UsMapSvg.vue';
 
 	const response = ref({})
-  const myKey = '?API_KEY=0DK9v5A3mzlvUJphIjhAeCsg2hdvsmqnLxmGP7Ko';
+  const myKey = import.meta.VITE_API_KEY;
   const baseUrl = 'https://api.usa.gov/crime/fbi/sapi'
 
   let stateSelection = ref();

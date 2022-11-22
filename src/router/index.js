@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 const Home = () => import('../views/Home.vue')
 const StateDetail = () => import('../views/detail/StateDetail.vue')
+const StateList = () => import('../components/StatesList.vue')
 
 const routes = [
     {
@@ -9,7 +10,11 @@ const routes = [
         component: Home
     },
     {
-      path: '/state/:id',
+      path: '/states',
+      component: StateList
+    },
+    {
+      path: '/states/:id',
       component: StateDetail,
       props: true
     },
