@@ -1,7 +1,12 @@
 <script setup>
 	import { ref } from 'vue'
-	const response = ref({})
+  import UsMapSvg from './UsMapSvg.vue';
 
+	const response = ref({})
+  const myKey = '?API_KEY=0DK9v5A3mzlvUJphIjhAeCsg2hdvsmqnLxmGP7Ko';
+  const baseUrl = 'https://api.usa.gov/crime/fbi/sapi'
+
+  let stateSelection = ref();
   // adding delay
   await new Promise(resolve => {
     setTimeout(() => { 
@@ -10,15 +15,17 @@
   })
     
   try {
-    const res = await fetch('https://api.usa.gov/crime/fbi/sapi/api/data/supplemental/national/property_type/2021/2022?API_KEY=0DK9v5A3mzlvUJphIjhAeCsg2hdvsmqnLxmGP7Ko')
-    console.log(res)
+    const res = await fetch(baseUrl + '/api/data/supplemental/national/property_type/2021/2022' + myKey)
     response.value = (await res.json())
   } catch (error) {
-    response.value = { answer: 'Error! Could not reach the API. ' + error, image: '' }
+    response.value = { answer: 'Error! Could not reach the API. '}
   }
 
+  
 </script>
 
 <template>
-  <p>{{ response}}</p>
 </template>
+
+<style>
+</style>
