@@ -74,11 +74,16 @@ svg {
 	margin: 1% auto;
 }
 g {
-	transform: translate(-95px);
+	transform: translate(70px);
 }
 path:hover {
     cursor: pointer;
-    fill: #989696;
+    fill: #fff;
+    box-shadow: 0 0 5px #fff,
+                0 0 25px #fff,
+                0 0 50px #fff,
+                0 0 200px #fff;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
 .land {
 	fill: #CCCCCC;
@@ -88,5 +93,6 @@ path:hover {
 	stroke-width:0.5;			
 	width: 90%;
     height: 60%;
+	transform: scale(0.8);
 }
 </style>

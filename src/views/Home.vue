@@ -1,9 +1,6 @@
 <script setup>
-import router from '../router';
+import Button from '../components/Button.vue'
 
-function goToStatesList() {
-  router.push({path: 'states'});
-}
 </script>
 <template>
   <div class="title">
@@ -11,11 +8,12 @@ function goToStatesList() {
       <img src="../assets/logo.png" alt="fbi logo">
       <h1>Federal Bureau of Investigation</h1>
       <h2>Crime Data Explorer</h2>
-      <button @click="goToStatesList()">Get Started</button>
+      <Button></Button>
     </div>
   </div>
 </template>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 .title {
     height: 100%;
     display: flex;
@@ -24,7 +22,6 @@ function goToStatesList() {
     flex-direction: column;
     align-items: center;
     align-content: center;
-    font-family: Opens Sans, sans-serif;
 }
 .map {
   background-color: rgb(27, 27, 27);
@@ -32,5 +29,9 @@ function goToStatesList() {
 
 img{
   width: 200px;
+}
+h1,h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 </style>
