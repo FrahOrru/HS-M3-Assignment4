@@ -1,16 +1,18 @@
 <script setup>
 import { storeToRefs } from 'pinia';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { useStore } from '../store/store';
 
 const props = defineProps({ score: Number})
 
 const store = useStore();
-const { getSelectedState } = storeToRefs(store);
+const { getCurrentProgressMaxScore } = storeToRefs(store);
 
-let percentageVal = ref((props.score / getSelectedState?.value?.violent_crime) * 100);
+let percentageVal = ref(1);
 
-
+watch(getCurrentProgressMaxScore, () => {
+    percentageVal.value = (props.score /  getCurrentProgressMaxScore.value) * 100;
+})
 </script>
 <template>
     <div class="percentage">

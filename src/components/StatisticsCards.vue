@@ -3,6 +3,7 @@ import ProgressBar from './ProgressBar.vue';
 
 const props = defineProps({
     fullValue: Object,
+    maxScore: Number
 })
 
 </script>
@@ -17,7 +18,7 @@ const props = defineProps({
             </div>
             <div class="bar">
                 <div class="single-bars" v-for="elem of fullValue.data">
-                    <ProgressBar :score="elem.value"></ProgressBar>
+                    <ProgressBar :maxScore="maxScore" :score="elem.value"></ProgressBar>
                 </div>
             </div>
         </div>

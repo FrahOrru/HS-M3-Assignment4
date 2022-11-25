@@ -16,20 +16,6 @@ function goToStatesList() {
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #050801;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-}
 a{
     position: relative;
     display: inline-block;
@@ -42,6 +28,7 @@ a{
     letter-spacing: 4px;
     overflow: hidden;
     margin-right: 50px;
+    padding-left: 5%;
    
 }
 a:hover{
